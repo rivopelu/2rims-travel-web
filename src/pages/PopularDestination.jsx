@@ -11,7 +11,7 @@ const PopularDestination = () => {
             <div className='flex w-full gap-3  justify-between items-center'>
                 {
                     dataPopuler.map((item, i) => (
-                        <div className='pt-7 cursor-pointer  '>
+                        <div className='pt-7 cursor-pointer  ' key={i}>
                             <div className=' rounded-lg overflow-hidden '>
 
                                 <img className='rounded-lg  hover:scale-110 duration-200 ' src={item.img} alt={item.title} />

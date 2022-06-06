@@ -1,6 +1,7 @@
 import React from 'react'
-import { ContainerComp, NavbarComp } from './components'
-import { HomePage, HotelsAndRestaurant, PopularDestination } from './pages'
+import { ContainerComp, FooterComp, NavbarComp } from './components'
+import { ActivityPage, HomePage, HotelsAndRestaurant, PopularDestination, TravelTips } from './pages'
+import AboutPage from './pages/AboutPage'
 
 const App = () => {
     return (
@@ -15,8 +16,11 @@ const App = () => {
                 <ContainerComp className={'flex flex-col gap-10 mt-10'}>
                     <PopularDestination />
                     <HotelsAndRestaurant />
+                    <TravelTips />
+                    <ActivityPage />
+                    <AboutPage />
                 </ContainerComp>
-
+                <FooterComp />
             </div>
         </div>
     )

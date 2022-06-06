@@ -1,31 +1,48 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { StartRating, TitlePageComp } from '../components'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { LinkComp, StartRating, TitlePageComp } from '../components'
+import { faLocationDot, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { HotelsAndRestaurantData } from '../assets';
+
 
 const HotelsAndRestaurant = () => {
+
     return (
         <div className="">
-            <TitlePageComp title={'Populer Destinations'} />
+            <div className='flex w-full items-center justify-between'>
 
-            <div className='flex w-full gap-3  justify-between items-center'>
-                <div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=480&q=80" alt="asdf" />
+                <TitlePageComp title={'Populer Destinations'} />
+                <LinkComp >
+                    <p>View All</p>
+                    <FontAwesomeIcon icon={faArrowRightLong} />
+                </LinkComp>
+            </div>
 
-                        <div>
-                            <p>Montaster santo hotels</p>
+            <div className='flex w-full gap-5  justify-between items-center'>
+                {
+                    HotelsAndRestaurantData.map((item, i) => (
+                        <div className='flex-1 pt-7' key={i}>
+                            <div className='flex h-96 overflow-hidden rounded-xl'>
+
+                                <img className='h-full w-full rounded-xl  hover:scale-110 duration-200 ' src={item.img} alt="asdf" />
+                            </div>
+
                             <div>
-                                <div>
-                                    <FontAwesomeIcon icon={faLocationDot} />
-                                    <p>Losasi tempat</p>
+                                <p className='pt-3 font-bold '>{item.name}</p>
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex items-center gap-2 text-sm text-gray-500'>
+                                        <FontAwesomeIcon icon={faLocationDot} />
+                                        <p>{item.location}</p>
+                                    </div>
+                                    <StartRating rate={item.rating} />
                                 </div>
-                                <StartRating />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    ))
+                }
+
+
             </div>
         </div>
     )

@@ -1,8 +1,16 @@
 import React from 'react'
+import StarRatings from 'react-star-ratings/build/star-ratings'
 
-const StartRating = () => {
+const StartRating = ({ rate }) => {
     return (
-        <div>StartRating</div>
+        <StarRatings
+            rating={rate}
+            starRatedColor="#f58f0a"
+            numberOfStars={5}
+            starDimension={'20px'}
+            starSpacing={'1px'}
+            name='rating'
+        />
     )
 }
 

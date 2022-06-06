@@ -26,7 +26,7 @@ const NavbarComp = () => {
     ]
 
     return (
-        <div className={`fixed h-12  text-white flex justify-center items-center w-full ${color && 'bg-gray-900'}`}>
+        <div className={`fixed h-12 z-50 text-white flex justify-center items-center w-full ${color && 'bg-gray-900'}`}>
             <ContainerComp className={'flex items-center justify-between'}>
 
                 <NavLink to={'/'} className='w-36 '>
